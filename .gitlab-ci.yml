@@ -1,0 +1,8 @@
+image: ros:kinetic-ros-core
+
+catkin_make:
+  stage: build
+
+  script:
+    - catkin_make
+
