@@ -59,6 +59,7 @@ add_message_files(
   pathIntegralStats.msg
   fullState.msg
   runstop.msg
+  coneArray.msg
 )
 
 ## Generate services in the 'srv' folder
