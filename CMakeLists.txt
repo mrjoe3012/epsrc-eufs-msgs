@@ -46,19 +46,15 @@ add_message_files(
   DIRECTORY msg
   FILES
   wheelSpeeds.msg
-  stateEstimatorStatus.msg
-  FilterOutput.msg
   canState.msg
   systemState.msg
   driveCommand.msg
   driveCommand2.msg
   driveCommand4.msg
-  chassisState.msg
   lapStats.msg
   pathIntegralParams.msg
   pathIntegralStats.msg
   fullState.msg
-  runstop.msg
   coneArray.msg
   pointArray.msg
 )
