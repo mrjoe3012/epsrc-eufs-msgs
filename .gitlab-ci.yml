@@ -11,12 +11,6 @@ before_script:
  - git clone https://gitlab.com/VictorLamoine/ros_gitlab_ci.git
  - source ros_gitlab_ci/gitlab-ci.bash >/dev/null
 
-# catkin_make
-catkin_make:
-  stage: build
-  script:
-    - catkin_make
-
 # catkin tools
 catkin_tools:
   stage: build
