@@ -13,9 +13,10 @@ uint16 ami_state
 uint16 AMI_NOT_SELECTED = 10
 uint16 AMI_ACCELERATION = 11
 uint16 AMI_SKIDPAD = 12
-uint16 AMI_TRACK_DRIVE = 13
-uint16 AMI_BRAKE_TEST = 14
-uint16 AMI_INSPECTION = 15
+uint16 AMI_AUTOCROSS = 13
+uint16 AMI_TRACK_DRIVE = 14
+uint16 AMI_BRAKE_TEST = 15
+uint16 AMI_INSPECTION = 16
 
 # asserted true when mission can be started
 bool mission_flag
