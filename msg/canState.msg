@@ -17,6 +17,7 @@ uint16 AMI_AUTOCROSS = 13
 uint16 AMI_TRACK_DRIVE = 14
 uint16 AMI_BRAKE_TEST = 15
 uint16 AMI_INSPECTION = 16
+uint16 AMI_MANUAL = 17
 
 # asserted true when mission can be started
 bool mission_flag
