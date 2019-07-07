@@ -54,6 +54,7 @@ add_message_files(
   fullState.msg
   coneArray.msg
   pointArray.msg
+  pointArrayStamped.msg
 )
 
 ## Generate services in the 'srv' folder
