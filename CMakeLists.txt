@@ -54,6 +54,12 @@ add_message_files(
   fullState.msg
   coneArray.msg
   pointArray.msg
+  chassisCommand.msg
+  chassisState.msg
+  pathIntegralStatus.msg
+  pathIntegralTiming.msg
+  runstop.msg
+  Costmap.msg
   pointArrayStamped.msg
 )
 
