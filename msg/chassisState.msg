@@ -1,14 +1,14 @@
 Header header
 
-bool throttleRelayEnabled
-bool autonomousEnabled
-bool runstopMotionEnabled
+bool throttle_relay_enabled
+bool autonomous_enabled
+bool runstop_motion_enabled
 
-string steeringCommander
+string steering_commander
 float64 steering
 
-string throttleCommander
+string throttle_commander
 float64 throttle
 
-string frontBrakeCommander
-float64 frontBrake
+string front_brake_commander
+float64 front_brake

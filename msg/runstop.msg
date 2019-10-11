@@ -1,4 +1,4 @@
 Header header
 
 string sender
-bool motionEnabled
+bool motion_enabled
