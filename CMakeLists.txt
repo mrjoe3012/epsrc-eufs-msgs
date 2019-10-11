@@ -45,22 +45,22 @@ find_package(Boost REQUIRED thread)
 add_message_files(
   DIRECTORY msg
   FILES
-  wheelSpeeds.msg
-  canState.msg
-  systemState.msg
-  lapStats.msg
-  pathIntegralParams.msg
-  pathIntegralStats.msg
-  fullState.msg
-  coneArray.msg
-  pointArray.msg
-  chassisCommand.msg
-  chassisState.msg
-  pathIntegralStatus.msg
-  pathIntegralTiming.msg
-  runstop.msg
+  WheelSpeeds.msg
+  CanState.msg
+  SystemState.msg
+  LapStats.msg
+  PathIntegralParams.msg
+  PathIntegralStats.msg
+  FullState.msg
+  ConeArray.msg
+  PointArray.msg
+  ChassisCommand.msg
+  ChassisState.msg
+  PathIntegralStatus.msg
+  PathIntegralTiming.msg
+  Runstop.msg
   Costmap.msg
-  pointArrayStamped.msg
+  PointArrayStamped.msg
 )
 
 ## Generate services in the 'srv' folder
