@@ -1,5 +1,5 @@
 Header header
 string tag
 
-pathIntegralParams params
-lapStats stats
+PathIntegralParams params
+LapStats stats
