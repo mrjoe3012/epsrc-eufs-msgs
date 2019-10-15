@@ -1,9 +1,9 @@
 Header header
 float32 steering
-float32 lfSpeed
-float32 rfSpeed
-float32 lbSpeed
-float32 rbSpeed
+float32 lf_speed
+float32 rf_speed
+float32 lb_speed
+float32 rb_speed
 
 # Steering is in radians
 # Speeds are in RPM
