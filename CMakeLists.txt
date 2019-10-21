@@ -61,6 +61,8 @@ add_message_files(
   Runstop.msg
   Costmap.msg
   PointArrayStamped.msg
+  BoundingBoxes.msg
+  BoundingBox.msg
 )
 
 ## Generate services in the 'srv' folder
