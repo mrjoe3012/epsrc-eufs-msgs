@@ -11,6 +11,8 @@ find_package(catkin REQUIRED COMPONENTS
   sensor_msgs
   geometry_msgs
   diagnostic_msgs
+  actionlib_msgs
+  actionlib
 )
 
 ## System dependencies are found with CMake's conventions
@@ -79,11 +81,17 @@ add_message_files(
 #   Action2.action
 # )
 
+add_action_files(
+  FILES
+  CheckForObjects.action
+)
+
 generate_messages(DEPENDENCIES
   std_msgs
   sensor_msgs
   geometry_msgs
   diagnostic_msgs
+  actionlib_msgs
 )
 
 catkin_package(CATKIN_DEPENDS
