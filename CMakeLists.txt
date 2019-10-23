@@ -79,6 +79,11 @@ add_message_files(
 #   Action2.action
 # )
 
+add_action_files(
+  FILES
+  CheckForObjects.action
+)
+
 generate_messages(DEPENDENCIES
   std_msgs
   sensor_msgs
