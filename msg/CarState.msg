@@ -1,0 +1,17 @@
+# This message includes both the kinematic and the dynamic state of the vehicle
+# All values are in SI units 
+Header header
+string child_frame_id # aka frame of the car
+
+# Kinematic State (x_k) in header frame 
+geometry_msgs/PoseWithCovariance pose 
+
+# Dynamic State (x_d) in child_frame_id
+geometry_msgs/TwistWithCovariance twist   # m/s
+geometry_msgs/Vector3 linear_acceleration # m/s^2
+float64[9] linear_acceleration_covariance # Row major x, y z in (m/s^2)
+eufs_msgs/WheelSpeeds wheel_speed
+float64 slip_ratio 
+
+# Metadata
+float64 state_of_charge # in Volts (V)

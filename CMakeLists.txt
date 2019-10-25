@@ -48,6 +48,8 @@ add_message_files(
   DIRECTORY msg
   FILES
   WheelSpeeds.msg
+  WheelSpeedsStamped.msg
+  CarState.msg
   CanState.msg
   SystemState.msg
   LapStats.msg
