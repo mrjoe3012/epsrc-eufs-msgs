@@ -10,8 +10,7 @@ geometry_msgs/PoseWithCovariance pose
 geometry_msgs/TwistWithCovariance twist   # m/s
 geometry_msgs/Vector3 linear_acceleration # m/s^2
 float64[9] linear_acceleration_covariance # Row major x, y z in (m/s^2)
-eufs_msgs/WheelSpeeds wheel_speed
-float64 slip_ratio 
+float64 slip_angle
 
 # Metadata
 float64 state_of_charge # in Volts (V)
