@@ -67,6 +67,7 @@ add_message_files(
   PointArrayStamped.msg
   BoundingBoxes.msg
   BoundingBox.msg
+  SLAMState.msg
 )
 
 ## Generate services in the 'srv' folder
