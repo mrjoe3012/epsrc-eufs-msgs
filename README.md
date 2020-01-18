@@ -13,6 +13,7 @@ A collection of all ROS messages and services used by the team
 | PathIntegralStats.msg |Combines LapStats and PathIntegralParams. Used for evaluating performance of MPPI |
 | PointArray.msg | array of geometry_mgsgs/Point. Used in perception for colourless cone detections |
 | PointArrayStamped.msg | as above but with std_msgs/Header |
+| SLAMState.msg | Status output message of the SLAM algorithm. Also counts laps! |
 | SystemState.msg | overall mission status of the car. Used in the `ros_can` package |
 | WheelSpeeds.msg | output of the wheel odometry. Used in the `ros_can` package |
 | WheelSpeedsStamped.msg | same as the above but with std_msgs/Header |
