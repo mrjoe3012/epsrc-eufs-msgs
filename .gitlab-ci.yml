@@ -16,3 +16,6 @@ catkin_tools:
   stage: build
   script:
     - catkin build --summarize --no-status --force-color
+  only:
+    - merge_requests
+    - master
