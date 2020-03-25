@@ -69,6 +69,7 @@ add_message_files(
   BoundingBox.msg
   SLAMState.msg
   EKFState.msg
+  SlamEval.msg
 )
 
 ## Generate services in the 'srv' folder
