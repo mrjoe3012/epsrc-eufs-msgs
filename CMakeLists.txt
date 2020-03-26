@@ -69,7 +69,7 @@ add_message_files(
   BoundingBox.msg
   SLAMState.msg
   EKFState.msg
-  SlamErr.msg
+  SLAMErr.msg
   EKFErr.msg
 )
 
