@@ -1,4 +1,4 @@
 # Cone information
 
-geometry_msgs/Pose pose
+geometry_msgs/Point point
 float64[4] covariance
