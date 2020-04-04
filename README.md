@@ -20,6 +20,7 @@ A collection of all ROS messages and services used by the team
 | SystemState.msg | overall mission status of the car. Used in the `ros_can` package |
 | WheelSpeeds.msg | output of the wheel odometry. Used in the `ros_can` package |
 | WheelSpeedsStamped.msg | same as the above but with std_msgs/Header |
-
+| Waypoint.msg | suggested control outputs at each point of path produced by planning nodes
+| WaypointArrayStamped.msg | array of Waypoint.msg with a header
 ## Services:
 

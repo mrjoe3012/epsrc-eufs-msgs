@@ -68,6 +68,8 @@ add_message_files(
   BoundingBoxes.msg
   BoundingBox.msg
   SLAMState.msg
+  Waypoint.msg
+  WaypointArrayStamped.msg
   EKFState.msg
   SLAMErr.msg
   EKFErr.msg
