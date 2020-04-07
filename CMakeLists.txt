@@ -57,6 +57,8 @@ add_message_files(
   PathIntegralStats.msg
   FullState.msg
   ConeArray.msg
+  ConeWithCovariance.msg
+  ConeArrayWithCovariance.msg
   PointArray.msg
   ChassisCommand.msg
   ChassisState.msg
