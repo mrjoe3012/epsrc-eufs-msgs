@@ -8,7 +8,9 @@ cache:
     - ccache/
 
 before_script:
- - 'apt-get install -y --no-install-recommends git'
+ - sudo rm -vf /var/lib/apt/lists/*
+ - sudo apt-get update
+ - apt-get install -y --no-install-recommends git'
  - git clone https://gitlab.com/VictorLamoine/ros_gitlab_ci.git
  - source ros_gitlab_ci/gitlab-ci.bash >/dev/null
 
