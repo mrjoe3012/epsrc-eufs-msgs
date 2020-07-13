@@ -1,7 +1,10 @@
 # Topic information
-string topic_name
+string topic
 string group
-bool trigger_ebs
 
-# Topic data
-bool publishing
+# Topic state
+uint16 state
+
+uint16 OFF = 0
+uint16 PUBLISHING = 1
+uint16 TIMEOUT_EXCEEDED = 2
