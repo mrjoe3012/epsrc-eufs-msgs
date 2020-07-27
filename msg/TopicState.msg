@@ -1,5 +1,5 @@
 # Topic information
-string topic_name
+string topic
 string description
 string group
 bool trigger_ebs
