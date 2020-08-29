@@ -51,7 +51,6 @@ add_message_files(
   WheelSpeedsStamped.msg
   CarState.msg
   CanState.msg
-  SystemState.msg
   LapStats.msg
   PathIntegralParams.msg
   PathIntegralStats.msg
@@ -75,6 +74,8 @@ add_message_files(
   EKFState.msg
   SLAMErr.msg
   EKFErr.msg
+  SystemStatus.msg
+  TopicStatus.msg
 )
 
 ## Generate services in the 'srv' folder
