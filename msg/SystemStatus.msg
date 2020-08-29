@@ -1,3 +1,3 @@
 Header header
 
-TopicStatus[] topic_states
+TopicStatus[] topic_statuses
