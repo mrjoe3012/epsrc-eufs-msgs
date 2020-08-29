@@ -75,7 +75,7 @@ add_message_files(
   SLAMErr.msg
   EKFErr.msg
   SystemStatus.msg
-  TopicState.msg
+  TopicStatus.msg
 )
 
 ## Generate services in the 'srv' folder
