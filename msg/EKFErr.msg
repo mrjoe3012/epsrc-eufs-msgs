@@ -1,5 +1,5 @@
 # Message for the error of the EKF. All of them are based on euclidean distances.
-Header header
+std_msgs/Header header
 
 float64 gps_x_vel_err
 float64 gps_y_vel_err

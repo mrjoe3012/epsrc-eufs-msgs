@@ -1,115 +1,65 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.5)
 project(eufs_msgs)
 
-## Find catkin macros and libraries
-## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
-## is used, also find other catkin packages
-find_package(catkin REQUIRED COMPONENTS
-  message_generation
-  genmsg
-  std_msgs
-  sensor_msgs
-  geometry_msgs
-  diagnostic_msgs
-  actionlib_msgs
-  actionlib
+# Default to C++14
+if(NOT CMAKE_CXX_STANDARD)
+  set(CMAKE_CXX_STANDARD 14)
+endif()
+
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  add_compile_options(-Wall -Wextra -Wpedantic)
+endif()
+
+# Find dependencies
+find_package(ament_cmake REQUIRED)
+find_package(rosidl_default_generators REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
+
+# List of message files
+set(msg_files
+  "msg/BoundingBox.msg"
+  "msg/BoundingBoxes.msg"
+  "msg/CanState.msg"
+  "msg/CarState.msg"
+  "msg/ChassisCommand.msg"
+  "msg/ChassisState.msg"
+  "msg/ConeArray.msg"
+  "msg/ConeArrayWithCovariance.msg"
+  "msg/ConeWithCovariance.msg"
+  "msg/Costmap.msg"
+  "msg/EKFErr.msg"
+  "msg/EKFState.msg"
+  "msg/FullState.msg"
+  "msg/LapStats.msg"
+  "msg/PathIntegralParams.msg"
+  "msg/PathIntegralStats.msg"
+  "msg/PathIntegralStatus.msg"
+  "msg/PathIntegralTiming.msg"
+  "msg/PointArray.msg"
+  "msg/PointArrayStamped.msg"
+  "msg/Runstop.msg"
+  "msg/SLAMErr.msg"
+  "msg/SLAMState.msg"
+  "msg/SystemStatus.msg"
+  "msg/TopicStatus.msg"
+  "msg/Waypoint.msg"
+  "msg/WaypointArrayStamped.msg"
+  "msg/WheelSpeeds.msg"
+  "msg/WheelSpeedsStamped.msg"
 )
 
-## System dependencies are found with CMake's conventions
-find_package(Boost REQUIRED COMPONENTS system)
-find_package(Boost REQUIRED thread)
-
-
-################################################
-## Declare ROS messages, services and actions ##
-################################################
-
-## To declare and build messages, services or actions from within this
-## package, follow these steps:
-## * Let MSG_DEP_SET be the set of packages whose message types you use in
-##   your messages/services/actions (e.g. std_msgs, actionlib_msgs, ...).
-## * In the file package.xml:
-##   * add a build_depend tag for "message_generation"
-##   * add a build_depend and a run_depend tag for each package in MSG_DEP_SET
-##   * If MSG_DEP_SET isn't empty the following dependency has been pulled in
-##     but can be declared for certainty nonetheless:
-##     * add a run_depend tag for "message_runtime"
-## * In this file (CMakeLists.txt):
-##   * add "message_generation" and every package in MSG_DEP_SET to
-##     find_package(catkin REQUIRED COMPONENTS ...)
-##   * add "message_runtime" and every package in MSG_DEP_SET to
-##     catkin_package(CATKIN_DEPENDS ...)
-##   * uncomment the add_*_files sections below as needed
-##     and list every .msg/.srv/.action file to be processed
-##   * uncomment the generate_messages entry below
-##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
-
-add_message_files(
-  DIRECTORY msg
-  FILES
-  WheelSpeeds.msg
-  WheelSpeedsStamped.msg
-  CarState.msg
-  CanState.msg
-  LapStats.msg
-  PathIntegralParams.msg
-  PathIntegralStats.msg
-  FullState.msg
-  ConeArray.msg
-  ConeWithCovariance.msg
-  ConeArrayWithCovariance.msg
-  PointArray.msg
-  ChassisCommand.msg
-  ChassisState.msg
-  PathIntegralStatus.msg
-  PathIntegralTiming.msg
-  Runstop.msg
-  Costmap.msg
-  PointArrayStamped.msg
-  BoundingBoxes.msg
-  BoundingBox.msg
-  SLAMState.msg
-  Waypoint.msg
-  WaypointArrayStamped.msg
-  EKFState.msg
-  SLAMErr.msg
-  EKFErr.msg
-  SystemStatus.msg
-  TopicStatus.msg
+set(action_files
+  "action/CheckForObjects.action"
 )
 
-## Generate services in the 'srv' folder
-# add_service_files(
-#   FILES
-#   Service1.srv
-#   Service2.srv
-# )
-
-## Generate actions in the 'action' folder
-# add_action_files(
-#   FILES
-#   Action1.action
-#   Action2.action
-# )
-
-add_action_files(
-  FILES
-  CheckForObjects.action
+# Generate messages & services
+rosidl_generate_interfaces(${PROJECT_NAME}
+  ${msg_files}
+  ${action_files}
+  DEPENDENCIES std_msgs geometry_msgs sensor_msgs
+  ADD_LINTER_TESTS
 )
 
-generate_messages(DEPENDENCIES
-  std_msgs
-  sensor_msgs
-  geometry_msgs
-  diagnostic_msgs
-  actionlib_msgs
-)
-
-catkin_package(CATKIN_DEPENDS
-  message_runtime
-  genmsg
-  std_msgs
-  sensor_msgs
-  geometry_msgs
-  diagnostic_msgs
-)
+ament_package()

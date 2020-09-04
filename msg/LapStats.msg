@@ -1,4 +1,4 @@
-Header header
+std_msgs/Header header
 
 int64 lap_number
 float64 lap_time

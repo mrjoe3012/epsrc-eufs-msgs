@@ -1,7 +1,7 @@
 # Message for the error of our SLAM algorithm. All of them are based on euclidean distances, besides the map similarity,
 # which can be interpreted as a percentage of how well our algorithm describes the map.
 
-Header header
+std_msgs/Header header
 
 float64 x_err
 float64 y_err
