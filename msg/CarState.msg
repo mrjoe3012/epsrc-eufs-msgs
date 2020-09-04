@@ -1,10 +1,10 @@
 # This message includes both the kinematic and the dynamic state of the vehicle
-# All values are in SI units 
-Header header
+# All values are in SI units
+std_msgs/Header header
 string child_frame_id # aka frame of the car
 
-# Kinematic State (x_k) in header frame 
-geometry_msgs/PoseWithCovariance pose 
+# Kinematic State (x_k) in header frame
+geometry_msgs/PoseWithCovariance pose
 
 # Dynamic State (x_d) in child_frame_id
 geometry_msgs/TwistWithCovariance twist   # m/s

@@ -1,6 +1,6 @@
 #Array of 2D cone locations (z = 0) with covariances
 
-Header header
+std_msgs/Header header
 
 ConeWithCovariance[] blue_cones
 ConeWithCovariance[] yellow_cones
