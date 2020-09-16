@@ -19,6 +19,8 @@ find_package(sensor_msgs REQUIRED)
 
 # List of message files
 set(msg_files
+  "msg/AckermannDrive.msg"
+  "msg/AckermannDriveStamped.msg"
   "msg/BoundingBox.msg"
   "msg/BoundingBoxes.msg"
   "msg/CanState.msg"
