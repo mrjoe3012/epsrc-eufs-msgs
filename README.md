@@ -4,6 +4,8 @@ A collection of all ROS messages and services used by the team
 ## Messages:
 | Name | Description |
 | ---- | ---- |
+| AckermannDrive.msg | driving command for a car-like vehicle using Ackermann steering |
+| AckermannDriveStamped.msg | as above but with std_msgs/Header |
 | CarState.msg | describes the internal state of the car. Similar to the `nav_msgs/Odometry` message this contains the position, orientation, linear velocity, angular velocity, wheel speeds and slip ratio of the car. |
 | CanState.msg | used to communicate with the ADS-DV board computer via CAN. Used in `ros_can` package |
 | ConeArray.msg | used to publish 2D locations of blue, yellow, orange and big cones |
