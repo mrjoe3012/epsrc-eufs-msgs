@@ -34,6 +34,7 @@ set(msg_files
   "msg/EKFErr.msg"
   "msg/EKFState.msg"
   "msg/FullState.msg"
+  "msg/IntegrationErr.msg"
   "msg/LapStats.msg"
   "msg/PathIntegralParams.msg"
   "msg/PathIntegralStats.msg"
