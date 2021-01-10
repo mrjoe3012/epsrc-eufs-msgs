@@ -49,6 +49,7 @@ set(msg_files
   "msg/TopicStatus.msg"
   "msg/Waypoint.msg"
   "msg/WaypointArrayStamped.msg"
+  "msg/WheelOdometryErr.msg"
   "msg/WheelSpeeds.msg"
   "msg/WheelSpeedsStamped.msg"
 )
