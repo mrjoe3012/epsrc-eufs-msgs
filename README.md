@@ -12,7 +12,7 @@ A collection of all ROS messages and services used by the team
 | ConeArrayWithCovariance.msg | as ConeArray, but contains covariance info |
 | ConeWithCovariance.msg | a pose and covariance matrix representing a single cone |
 | FullState.msg | used for data collection during dynamics learning for MPPI training |
-| IntegrationErr.msg | Error of Odometry Integration based on euclidean distance. Used by localizations'`integration_evaluator` script|
+| IntegrationErr.msg | Error of Odometry Integration based on euclidean distance. Used by localization's `integration_evaluator` script |
 | LapStats.msg | useful statistics from lap timings |
 | PathIntegralParams.msg | MPPI paramteres |
 | PathIntegralStats.msg |Combines LapStats and PathIntegralParams. Used for evaluating performance of MPPI |
