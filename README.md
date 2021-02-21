@@ -23,7 +23,7 @@ A collection of all ROS messages and services used by the team
 | SLAMErr.msg | Error measure for SLAM, used to objectively evaluate simulation performance |
 | EKFErr.msg | Error measure for EKF, used to objectively evaluate simulation performance |
 | SystemState.msg | overall mission status of the car. Used in the `ros_can` package |
-| WheelOdometryErr.msg | Error of Wheel Odometry based on euclidean distance. Used by localizations' `wheel_odometery_evaluator` script |
+| WheelOdometryErr.msg | Error of Wheel Odometry based on euclidean distance. Used by localization's `wheel_odometery_evaluator` script |
 | WheelSpeeds.msg | output of the wheel odometry. Used in the `ros_can` package |
 | WheelSpeedsStamped.msg | same as the above but with std_msgs/Header |
 | Waypoint.msg | suggested control outputs at each point of path produced by planning nodes
