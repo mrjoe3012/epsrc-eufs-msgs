@@ -34,6 +34,7 @@ set(msg_files
   "msg/EKFErr.msg"
   "msg/EKFState.msg"
   "msg/FullState.msg"
+  "msg/IntegrationErr.msg"
   "msg/LapStats.msg"
   "msg/PathIntegralParams.msg"
   "msg/PathIntegralStats.msg"
@@ -48,6 +49,7 @@ set(msg_files
   "msg/TopicStatus.msg"
   "msg/Waypoint.msg"
   "msg/WaypointArrayStamped.msg"
+  "msg/WheelOdometryErr.msg"
   "msg/WheelSpeeds.msg"
   "msg/WheelSpeedsStamped.msg"
 )
