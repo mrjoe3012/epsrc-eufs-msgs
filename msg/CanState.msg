@@ -20,7 +20,4 @@ uint16 AMI_ADS_INSPECTION=16
 uint16 AMI_ADS_EBS=17
 uint16 AMI_DDT_INSPECTION_A=18
 uint16 AMI_DDT_INSPECTION_B=19
-uint16 AMI_MANUAL=20
-
-# asserted true when mission can be started
-bool mission_flag
+uint16 AMI_JOYSTICK=20

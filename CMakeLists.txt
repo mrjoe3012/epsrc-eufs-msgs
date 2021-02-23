@@ -54,6 +54,10 @@ set(msg_files
   "msg/WheelSpeedsStamped.msg"
 )
 
+# Fixes 'No rule to make target..'
+set(FastRTPS_INCLUDE_DIR /opt/ros/foxy/include) 
+set(FastRTPS_LIBRARY_RELEASE /opt/ros/foxy/lib/libfastrtps.so)
+
 set(action_files
   "action/CheckForObjects.action"
 )

@@ -1,24 +1,30 @@
-image: ros:melodic-ros-core
+image: ros:foxy-ros-base-focal
 
 variables:
+  GIT_CLONE_PATH: $CI_BUILDS_DIR/$CI_CONCURRENT_PROJECT_ID/ros_ws/src/eufs_msgs
   GIT_SUBMODULE_STRATEGY: recursive
 
-cache:
-  paths:
-    - ccache/
-
 before_script:
-  - sudo rm -vf /var/lib/apt/lists/*
-  - sudo apt-get update
-  - sudo apt install git -y
-  - git clone https://gitlab.com/VictorLamoine/ros_gitlab_ci.git
-  - source ros_gitlab_ci/gitlab-ci.bash >/dev/null
+  # Move out of GIT_CLONE_PATH
+  - cd $CI_BUILDS_DIR/$CI_CONCURRENT_PROJECT_ID/ros_ws
 
-# catkin tools
-catkin_tools:
-  stage: build
+  # Install ROS package dependencies
+  - apt-get update -qq
+  - rosdep update -q
+  - rosdep install -y -q --from-paths src --ignore-src
+  - rm -rf /var/lib/apt/lists/*
+
+  # Source ROS
+  - . /opt/ros/$ROS_DISTRO/setup.sh
+
+stages:
+  - test
+
+colcon:
+  stage: test
   script:
-    - catkin build --summarize --no-status --force-color
-  only:
-    - merge_requests
-    - master
+    - colcon build
+  # Only run on ros2 branch and merge requests
+  rules:
+    - if: $CI_MERGE_REQUEST_ID
+    - if: $CI_COMMIT_BRANCH == "ros2"
