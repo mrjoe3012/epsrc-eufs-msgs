@@ -1,30 +1,45 @@
-image: ros:foxy-ros-base-focal
+image: ros:galactic-ros-base-focal
 
-variables:
-  GIT_CLONE_PATH: $CI_BUILDS_DIR/$CI_CONCURRENT_PROJECT_ID/ros_ws/src/eufs_msgs
-  GIT_SUBMODULE_STRATEGY: recursive
-
-before_script:
-  # Move out of GIT_CLONE_PATH
-  - cd $CI_BUILDS_DIR/$CI_CONCURRENT_PROJECT_ID/ros_ws
-
-  # Install ROS package dependencies
-  - apt-get update -qq
-  - rosdep update -q
-  - rosdep install -y -q --from-paths src --ignore-src
-  - rm -rf /var/lib/apt/lists/*
-
-  # Source ROS
-  - . /opt/ros/$ROS_DISTRO/setup.sh
-
-stages:
-  - test
-
-colcon:
-  stage: test
-  script:
-    - colcon build
+workflow:
   # Only run on ros2 branch and merge requests
   rules:
     - if: $CI_MERGE_REQUEST_ID
-    - if: $CI_COMMIT_BRANCH == "ros2"
+    - if: $CI_COMMIT_BRANCH == "master"
+
+variables:
+  PROJECT_BASE_DIR: $CI_PROJECT_DIR/src/eufs_msgs
+
+stages:
+  - .pre
+  - build
+
+setup:
+  stage: .pre
+  script:
+    # Setup file structure
+    - mkdir -p $PROJECT_BASE_DIR
+    - shopt -s extglob dotglob
+    - mv !(src) $PROJECT_BASE_DIR
+    - shopt -u extglob dotglob
+
+  variables:
+    GIT_STRATEGY: clone
+  artifacts:
+    expire_in: 1h
+    paths:
+      - $CI_PROJECT_DIR
+
+build:
+  stage: build 
+  script:
+    # Install ROS package dependencies
+    - apt-get update -qq
+    - rosdep update -q --rosdistro=$ROS_DISTRO
+    - rosdep install -y -q --from-paths src --ignore-src
+    - rm -rf /var/lib/apt/lists/*
+    
+    # Build packages
+    - . /opt/ros/$ROS_DISTRO/setup.sh
+    - colcon build
+  variables:
+    GIT_STRATEGY: none
