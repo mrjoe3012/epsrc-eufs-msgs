@@ -31,11 +31,17 @@ setup:
 
 build:
   stage: build 
+  before_script:
+  # This before_script is for dealing with the fact that GIT_STRATEGY: none doesn't imply a clean working directory. 
+  # see: https://gitlab.com/gitlab-org/gitlab/-/issues/17103
+  - shopt -s extglob dotglob
+  - rm -rf !(src) 
+  - shopt -u extglob dotglob
   script:
     # Install ROS package dependencies
     - apt-get update -qq
     - rosdep update -q --rosdistro=$ROS_DISTRO
-    - rosdep install -y -q --from-paths src --ignore-src
+    - rosdep install -y -q --from-paths $CI_PROJECT_DIR --ignore-src
     - rm -rf /var/lib/apt/lists/*
     
     # Build packages
