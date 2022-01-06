@@ -52,10 +52,6 @@ set(msg_files
   "msg/WheelSpeedsStamped.msg"
 )
 
-# Fixes 'No rule to make target..'
-set(FastRTPS_INCLUDE_DIR /opt/ros/foxy/include) 
-set(FastRTPS_LIBRARY_RELEASE /opt/ros/foxy/lib/libfastrtps.so)
-
 set(action_files
   "action/CheckForObjects.action"
 )
@@ -65,7 +61,8 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   ${msg_files}
   ${action_files}
   DEPENDENCIES std_msgs geometry_msgs sensor_msgs
-  ADD_LINTER_TESTS
 )
+
+ament_export_dependencies(rosidl_default_runtime)
 
 ament_package()
