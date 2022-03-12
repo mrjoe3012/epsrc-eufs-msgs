@@ -43,6 +43,7 @@ set(msg_files
   "msg/Runstop.msg"
   "msg/SLAMErr.msg"
   "msg/SLAMState.msg"
+  "msg/StateMachineState.msg"
   "msg/SystemStatus.msg"
   "msg/TopicStatus.msg"
   "msg/Waypoint.msg"
