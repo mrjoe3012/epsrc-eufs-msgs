@@ -57,10 +57,14 @@ set(action_files
   "action/CheckForObjects.action"
 )
 
+set(srv_files
+  "srv/SetCanState.srv")
+
 # Generate messages & services
 rosidl_generate_interfaces(${PROJECT_NAME}
   ${msg_files}
   ${action_files}
+  ${srv_files}
   DEPENDENCIES std_msgs geometry_msgs sensor_msgs
 )
 
