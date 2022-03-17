@@ -46,6 +46,8 @@ set(msg_files
   "msg/StateMachineState.msg"
   "msg/SystemStatus.msg"
   "msg/TopicStatus.msg"
+  "msg/VehicleCommands.msg"
+  "msg/VehicleCommandsStamped.msg"
   "msg/Waypoint.msg"
   "msg/WaypointArrayStamped.msg"
   "msg/WheelOdometryErr.msg"
